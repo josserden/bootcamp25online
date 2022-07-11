@@ -23,15 +23,3 @@
 // console.log(!undefined);
 
 // console.log(5 > 5);
-
-// const a = parseFloat(prompt('Enter '));
-
-// Number(a);
-
-// const b = a;
-
-// console.log(typeof a);
-// console.log(a);
-
-// console.log(typeof null);
-// console.log(typeof b);

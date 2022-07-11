@@ -4,3 +4,7 @@
  */
 
 const value = 27.4;
+
+console.log(Math.floor(27.9));
+console.log(Math.ceil(27.1));
+console.log(Math.round(27.4));

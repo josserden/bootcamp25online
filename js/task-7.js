@@ -18,13 +18,7 @@
 
 // console.log('A' === 'a');
 
-// console.log('A'.charCodeAt(0));
-// console.log('a'.charCodeAt(0));
-
 // console.log('2' < '12');
-
-// console.log('2'.charCodeAt(0));
-// console.log('1'.charCodeAt(0));
 
 // console.log('4' == 4);
 
@@ -50,3 +44,5 @@
 // console.log(undefined == null);
 
 // console.log(undefined === null);
+
+// console.log(typeof null);

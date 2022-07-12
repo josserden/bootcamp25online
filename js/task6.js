@@ -8,4 +8,15 @@
 * більше 24 , виводи рядок "Overdue"
 */
 
-// const hours = 24;
+const hours = 17;
+let message;
+
+if (hours < 17) {
+  message = 'Pending';
+} else if (hours >= 17 && hours <= 24) {
+  message = 'Expires';
+} else {
+  message = 'Overdue';
+}
+
+console.log(message);

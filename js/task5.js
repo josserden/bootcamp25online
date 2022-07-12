@@ -4,3 +4,15 @@
  */
 
 let link = 'https://somesite.com/about';
+let result;
+
+// const string = link[link.length - 1];
+// const indexLink = string === '/';
+
+if (!link.endsWith('/') && link.includes('my-site')) {
+  result = link + '/';
+} else {
+  result = link;
+}
+
+console.log(result);

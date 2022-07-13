@@ -5,3 +5,12 @@
 
 const names = 'Jacob,William,Solomon,Artemis';
 const phones = '89001234567,89001112233,890055566377,890055566300';
+const arrNames = names.split(',');
+const arrPhones = phones.split(',');
+
+for (let i = 0; i < arrNames.length; i += 1) {
+  const name = arrNames[i];
+  const phone = arrPhones[i];
+
+  console.log(`${name} - ${phone}`);
+}

@@ -5,3 +5,14 @@
 
 const string =
   'Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia voluptas cupiditate excepturi,';
+
+const array = string.split(' ');
+
+array.splice(0, 1);
+array.splice(array.length - 1, 1);
+
+console.log(array.join(' '));
+
+// normalizedString.shift();
+// normalizedString.pop();
+// const newString = normalizedString.join(' ');

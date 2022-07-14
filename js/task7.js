@@ -1,24 +1,8 @@
+// todo Середнє значення
 /*
- * Створи скрипт, який приймає два числа a та b і повертає найбільший можливий результат серед виразів:
-a + b
-a — b
-a * b
-a / b
+ * Напишіть функцію calAverage() яка приймає довільну кількість аргументів і повертає їхнє середнє значення. Усі аргументи будуть лише числами.
  */
 
-const a = 50;
-const b = 4;
-let results = [a + b, a - b, a * b, a / b];
-
-// let maxResult = results[0];
-
-// for (const result of results) {
-//   if (maxResult < result) {
-//     maxResult = result;
-//   }
-// }
-
-let maxResult = Math.max(a + b, a - b, a * b, a / b);
-// let maxResult = Math.max(...results);
-
-console.log(maxResult);
+console.dir(calAverage(1, 2, 3, 4)); // 2.5
+console.log(calAverage(14, 8, 2)); // 8
+console.log(calAverage(27, 43, 2, 8, 36)); // 23.2

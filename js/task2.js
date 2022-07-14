@@ -1,17 +1,4 @@
-// todo Масиви та рядки
+// todo Менше з чисел
 /*
- * Напиши скрипт для обчислення площі прямокутника зі сторонами, значення яких зберігаються у змінній values у вигляді рядка. Значення гарантовано розділені пробілом.
+ * Напиши функцію min(a,b), яка повертає найменше з чисел a та b.
  */
-
-const values = '8 11';
-const numbers = values.split(' ');
-
-const a = Number(numbers[0]);
-const b = Number(numbers[1]);
-
-// const a = Number(numbers.at(0));
-// const b = Number(numbers.at(1));
-
-const area = a * b;
-
-console.log(area);

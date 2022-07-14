@@ -1,17 +1,7 @@
-// todo Масиви та рядки
+// todo Пошук найбільшого елемента
 /*
- * Напиши скрипт, який «розвертає» рядок (зворотний порядок літер) і виводить його в консоль.
+ * Напиши функцію findLargestNumber(numbers)яка шукає найбільше число в масиві.
  */
 
-const string = 'Welcome to the future';
-// let newString = '';
-
-// for (let i = string.length - 1; i >= 0; i -= 1) {
-//   const letter = string[i];
-
-//   newString += letter;
-// }
-
-// console.log(newString);
-
-console.log(string.split('').reverse().join(''));
+console.log(findLargestNumber([2, 17, 94, 1, 23, 37])); // 94
+console.log(findLargestNumber([49, 4, 7, 83, 12])); // 83

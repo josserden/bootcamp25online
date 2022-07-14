@@ -3,5 +3,18 @@
  * Напиши функцію findLargestNumber(numbers)яка шукає найбільше число в масиві.
  */
 
-console.log(findLargestNumber([2, 17, 94, 1, 23, 37])); // 94
+function findLargestNumber(numbers) {
+  let max = numbers[0];
+
+  for (const number of numbers) {
+    if (max < number) {
+      max = number;
+    }
+  }
+
+  return max;
+}
+
+console.log(findLargestNumber([0, 2, 17, 94, 1, 23, 37])); // 94
 console.log(findLargestNumber([49, 4, 7, 83, 12])); // 83
+console.log(findLargestNumber([8, 8, 8, 8, 8])); // 8

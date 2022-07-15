@@ -1,18 +1,25 @@
-// todo Площа прямокутника
+//todo Масив об'єктів
 /*
- * Напиши функцію getRectArea(dimensions) для обчислення площі прямокутника зі сторонами, значення яких будуть передані до параметра dimensions у вигляді рядка. Значення гарантовано розділені пробілом.
+ * Напишіть ф-цію calcTotalPrice(array, stoneName), яка приймає масив об'єктів та рядок з назвою каменю. Ф-ція рахує і повертає загальну вартість каміння з таким ім'ям, ціною та кількістю з об'єкта
  */
 
-function getRectArea(dimensions) {
-  const numbers = dimensions.split(' ');
+const stones = [
+  { name: 'Ізумруд', price: 1300, quantity: 4 },
+  { name: 'Брильянт', price: 2700, quantity: 3 },
+  { name: 'Сапфір', price: 400, quantity: 7 },
+];
 
-  const a = Number(numbers[0]);
-  const b = Number(numbers[1]);
+function calcTotalPrice(array, stoneName) {
+  for (const item of array) {
+    if (item.name === stoneName) {
+      return item.price * item.quantity;
+    }
+  }
 
-  return a * b;
+  return `${stoneName} not found!`;
 }
 
-console.log(getRectArea('8 11'));
-console.log(getRectArea('84 101'));
-console.log(getRectArea('5 9'));
-console.log(getRectArea('4 67'));
+console.log(calcTotalPrice(stones, 'Брильянт'));
+console.log(calcTotalPrice(stones, 'Сапфір'));
+console.log(calcTotalPrice(stones, 'Ізумруд'));
+console.log(calcTotalPrice(stones, 'Цегла'));

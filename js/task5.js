@@ -1,7 +1,23 @@
 // todo Операція spread
 
 /*
- * Доповни функцію createContact(partialContact) так, щоб вона повертала новий об'єкт контакту з доданими властивостями id і createdAt, а також list зі значенням "default", якщо у partialContact немає такої властивості. */
+ * Доповни функцію createContact(partialContact) так, щоб вона повертала новий об'єкт контакту з доданими властивостями id і createdAt, а також list зі значенням "default", якщо у partialContact немає такої властивості.
+ */
+
+function generateId() {
+  return '_' + Math.random().toString(36).substr(2, 9);
+}
+
+function createContact(partialContact) {
+  const updatedContact = {
+    id: generateId(),
+    createdAt: new Date().toLocaleString(),
+    list: 'default',
+    ...partialContact,
+  };
+
+  return updatedContact;
+}
 
 console.log(
   createContact({
@@ -16,7 +32,3 @@ console.log(
     email: 'poly@hotmail.com',
   }),
 );
-
-function generateId() {
-  return '_' + Math.random().toString(36).substr(2, 9);
-}

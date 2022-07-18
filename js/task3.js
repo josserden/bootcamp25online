@@ -3,26 +3,20 @@
  * Перепиши функцію так, щоб вона приймала один об'єкт параметрів замість набору незалежних аргументів.
  */
 
-// Було
-// console.log(getBotReport('Cyberdyne Systems', 150, 50));
+function getBotReport({ companyName, stock: { repair, defense } }) {
+  // const { repair, defense } = stock;
 
-// Очікується
-// console.log(
-//   getBotReport({
-//     companyName: 'Cyberdyne Systems',
-//     stock: {
-//       repair: 150,
-//       defense: 50,
-//     },
-//   }),
-// );
+  const message = `${companyName} has ${defense + repair} goods in stock`;
 
-// console.log(
-//   getBotReport({
-//     companyName: 'ATB',
-//     stock: {
-//       repair: 50,
-//       defense: 50,
-//     },
-//   }),
-// );
+  return message;
+}
+
+console.log(
+  getBotReport({
+    companyName: 'Cyberdyne Systems',
+    stock: {
+      repair: 150,
+      defense: 50,
+    },
+  }),
+);

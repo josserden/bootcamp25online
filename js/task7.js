@@ -4,5 +4,9 @@
  * Виконайте рефакторинг коду, використовуючи метод для Each і стрілочні функції.
  */
 
-// logItems(['Mango', 'Poly', 'Ajax']); // 1 - Mango ...
-// logItems(['🍎', '🍇', '🍑', '🍌', '🍋']); // 1 - '🍎' ...
+const logItems = items => {
+  items.forEach((item, index) => console.log(`${index + 1} - ${item}`));
+};
+
+logItems(['Mango', 'Poly', 'Ajax']);
+logItems(['🍎', '🍇', '🍑', '🍌', '🍋']);

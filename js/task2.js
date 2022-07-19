@@ -1,26 +1,27 @@
-//todo Example 2 - Деструктуризація
+//todo Колбек функції
 /*
- * Перепиши функцію так, щоб вона приймала один об'єкт параметрів замість набору незалежних аргументів.
+ * Додайте об'єкту обліковий запис методами withdraw (amount, onSuccess, onError) і deposit(amount, onSuccess, onError), де перший параметр це сума операції, а другий і третій - колбеки.
+
+* Метод withdraw викликає onError якщо amount більше TRANSACTION_LIMIT або this.balance, і onSuccess в іншому випадку.
+
+* Метод deposit викликає onError якщо amount більше TRANSACTION_LIMIT або менше або дорівнює нулю, і onSuccess в іншому випадку.
  */
 
-function printContactsInfo({ phones, names } = {}) {
-  if (!phones || !names) {
-    console.log('Нічого не передано');
-    return;
-  }
+const TRANSACTION_LIMIT = 1000;
 
-  const namesArr = names.split(',');
-  const phonesArr = phones.split(',');
+const account = {
+  name: 'John',
+  balance: 2000,
 
-  for (let i = 0; i < namesArr.length; i += 1) {
-    const name = namesArr[i];
-    const phone = phonesArr[i];
+  withdraw(amount, onSuccess, onError) {},
 
-    console.log(`${name} - ${phone}`);
-  }
+  deposit(amount, onSuccess, onError) {},
+};
+
+function handleSuccess(message) {
+  console.warn(`✅ Success! ${message}`);
 }
 
-printContactsInfo({
-  names: 'Jacob,William,Solomon,Artemis',
-  phones: '89001234567,89001112233,890055566377,890055566300',
-});
+function handleError(message) {
+  console.error(`❌ Error! ${message}`);
+}

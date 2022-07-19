@@ -1,22 +1,34 @@
-//todo Example 3 - Глибока деструктуризація
+//todo Колбек функції
 /*
- * Перепиши функцію так, щоб вона приймала один об'єкт параметрів замість набору незалежних аргументів.
+ * Напишіть функцію each(array, callback), яка першим параметром очікує масив, а другим - функцію, яка застосовується до кожного елемента масиву. Функція each повинна повернути новий масив, елементами якого будуть результати виклику колбека.
  */
 
-function getBotReport({ companyName, stock: { repair, defense } }) {
-  // const { repair, defense } = stock;
+// console.log(
+//   each([64, 49, 36, 25, 16], function (value) {
+//     return value * 2;
+//   }),
+// );
 
-  const message = `${companyName} has ${defense + repair} goods in stock`;
+// console.log(
+//   each([64, 49, 36, 25, 16], function (value) {
+//     return value - 10;
+//   }),
+// );
 
-  return message;
-}
+// console.log(
+//   each([64, 49, 36, 25, 16], function (value) {
+//     return Math.sqrt(value);
+//   }),
+// );
 
-console.log(
-  getBotReport({
-    companyName: 'Cyberdyne Systems',
-    stock: {
-      repair: 150,
-      defense: 50,
-    },
-  }),
-);
+// console.log(
+//   each([1.5, 2.1, 16.4, 9.7, 11.3], function (value) {
+//     return Math.ceil(value);
+//   }),
+// );
+
+// console.log(
+//   each([1.5, 2.1, 16.4, 9.7, 11.3], function (value) {
+//     return Math.floor(value);
+//   }),
+// );

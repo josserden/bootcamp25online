@@ -12,13 +12,29 @@
 Є багатомірний масив. Треба зробити його розгладити на один рівень
 */
 
-const arr = [
-  12,
-  [34, [2, [33]]],
-  34,
-  [23],
-  'hello',
-  ['five', ['some arr', ['last arr'], { name: 'John' }]],
-];
+// const arr = [
+//   12,
+//   [34, [2, [33]]],
+//   34,
+//   [23],
+//   'hello',
+//   ['five', ['some arr', ['last arr'], { name: 'John' }]],
+// ];
 
 //  [12,34,2,33,34,23,'hello','five','some arr','last arr', { name: 'John' }]
+
+const arr = [
+  {
+    name: 'test',
+    value: 1,
+    children: [
+      {
+        name: 'test2',
+        value: 2,
+        children: [{ name: 'test3', value: 3 }],
+      },
+    ],
+  },
+];
+
+// {test: 1, test2: 2, test3: 3}

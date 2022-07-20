@@ -4,3 +4,8 @@ console.table(vehicles);
 /*
  * Нехай функція getModels повертає масив моделей (поле model) всіх автомобілів.
  */
+
+// const getModels = cars => cars.map(car => car.model);
+const getModels = cars => cars.map(({ model }) => model);
+
+console.log(getModels(vehicles));

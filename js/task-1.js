@@ -8,33 +8,16 @@
 // example([1, 2, 3, 4, 5]) = > [1, 2, 3, 4, 5]
 // example(['Banana', 'Orange', 'Apple', 'Mango', 0, 2, 2]) = > [0, 2, 2, 'Apple', 'Banana', 'Mango', 'Orange']
 
-/*
-Є багатомірний масив. Треба зробити його розгладити на один рівень
-*/
+const sorArray = array => {
+  return array
+    .reduce((acc, element) => {
+      typeof element === 'string' ? acc.push(element) : acc.unshift(element);
 
-// const arr = [
-//   12,
-//   [34, [2, [33]]],
-//   34,
-//   [23],
-//   'hello',
-//   ['five', ['some arr', ['last arr'], { name: 'John' }]],
-// ];
+      return acc;
+    }, [])
+    .sort((a, b) => {
+      return typeof a === 'string' ? a.localeCompare(b) : a - b;
+    });
+};
 
-//  [12,34,2,33,34,23,'hello','five','some arr','last arr', { name: 'John' }]
-
-const arr = [
-  {
-    name: 'test',
-    value: 1,
-    children: [
-      {
-        name: 'test2',
-        value: 2,
-        children: [{ name: 'test3', value: 3 }],
-      },
-    ],
-  },
-];
-
-// {test: 1, test2: 2, test3: 3}
+console.log(sorArray(['Banana', 'Orange', 'Apple', 'Mango', 0, 2, 2]));

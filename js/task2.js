@@ -7,23 +7,42 @@
  * getContacts - повертає масив контактів.
  */
 
-/*
-generateId() {
+const phonebook = {
+  contacts: [],
+
+  add(contact) {
+    const newContact = {
+      id: this.generateId(),
+      createdAt: this.getDate(),
+      list: 'default',
+      ...contact,
+    };
+
+    this.contacts.push(newContact);
+  },
+
+  getDate() {
+    return new Date();
+  },
+
+  getContacts() {
+    return this.contacts;
+  },
+
+  generateId() {
     return '_' + Math.random().toString(36).substr(2, 9);
   },
-*/
+};
 
-console.log(
-  phonebook.add({
-    name: 'Mango',
-    email: 'mango@mail.com',
-    list: 'friends',
-  }),
-);
+phonebook.add({
+  name: 'Mango',
+  email: 'mango@mail.com',
+  list: 'friends',
+});
 
-console.log(
-  phonebook.add({
-    name: 'Poly',
-    email: 'poly@hotmail.com',
-  }),
-);
+phonebook.add({
+  name: 'Poly',
+  email: 'poly@hotmail.com',
+});
+
+console.dir(phonebook.getContacts());

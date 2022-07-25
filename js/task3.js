@@ -1,36 +1,15 @@
-// todo Калькулятор
+// todo User
 
 /*
- * Створіть об'єкт calculator із трьома методами:
-
-* read(firstValue, secondValue) - приймає два значення та зберігає їх як властивості об'єкта.
-* add() - повертає суму збережених значень.
-* mult() - перемножує збережені значення та повертає результат.
+ * Напиши клас User який створює об'єкт із властивостями login та email. Оголоси приватні властивості #login та #email, доступ до яких зроби через геттер та сеттер login та email.
  */
 
-const calculator = {
-  firstValue: 0,
-  secondValue: 0,
+const mango = new User({
+  login: 'Mango',
+  email: 'mango@dog.woof',
+});
 
-  read(a, b) {
-    this.firstValue = a;
-    this.secondValue = b;
-  },
-
-  add() {
-    const { firstValue, secondValue } = this;
-
-    return firstValue + secondValue;
-  },
-
-  mult() {
-    const { firstValue, secondValue } = this;
-
-    return firstValue * secondValue;
-  },
-};
-
-calculator.read(10, 20);
-
-console.log(calculator.add());
-console.log(calculator.mult());
+const poly = new User({
+  login: 'Poly',
+  email: 'poly@mail.com',
+});

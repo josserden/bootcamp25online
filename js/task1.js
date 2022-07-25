@@ -1,35 +1,37 @@
-// todo Майстерня коштовностей
+// todo Блогер
 
 /*
- * Напишіть метод calcTotalPrice(stoneName), який приймає назву каменю та розраховує та повертає загальну вартість каменів з таким ім'ям, ціною та кількістю з властивості stones.
- */
+* Напиши клас Blogger для створення об'єкта блогера з наступними властивостями:
 
-const chopShop = {
-  stones: [
-    { name: 'Emerald', price: 1300, quantity: 4 },
-    { name: 'Diamond', price: 2700, quantity: 3 },
-    { name: 'Sapphire', price: 1400, quantity: 7 },
-    { name: 'Ruby', price: 800, quantity: 2 },
-  ],
+* name - ім'я, рядок
+* age - вік, число
+* numberOfPosts - кількість постів, число
+* topics - масив тем, на яких спеціалізується блогер
 
-  calcTotalPrice(stoneName) {
-    // return this.stones.reduce((acc, { name, price, quantity }) => {
-    //   if (name === stoneName) {
-    //     acc = price * quantity;
-    //   }
+* Клас очікує один параметр - об'єкт налаштувань з однойменними властивостями.
 
-    //   return acc;
-    // }, 0);
+* Додай метод getInfo(), який повертає рядок: User ${ім'я} is ${вік} years old and has ${кількість постів} posts.
 
-    const findStone = this.stones.find(({ name }) => name === stoneName);
+* Додай метод updatePostCount(value), який у параметрі value приймає кількість постів, які потрібно додати користувачеві.
+*/
 
-    if (!findStone) {
-      return `Вибачте, ${stoneName} відсутній в базі`;
-    }
+// const mango = new Blogger({
+//   name: 'Mango',
+//   age: 24,
+//   numberOfPosts: 20,
+//   topics: ['tech', 'cooking'],
+// });
 
-    return findStone.price * findStone.quantity;
-  },
-};
+// const poly = new Blogger({
+//   name: 'Poly',
+//   age: 19,
+//   numberOfPosts: 17,
+//   topics: ['sports', 'gaming', 'health'],
+// });
 
-console.log(chopShop.calcTotalPrice('Diamond'));
-console.log(chopShop.calcTotalPrice('Gold'));
+// const john = new Blogger({
+//   name: 'John',
+//   age: 39,
+//   numberOfPosts: 100,
+//   topics: ['politics', 'military', 'ballet'],
+// });

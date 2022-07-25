@@ -1,29 +1,19 @@
-// todo call() apply()
+// todo Toggle
 
 /*
- * Створіть функцію hostGuests яка поверне ім'я будинку та гостей у ньому
- * Викличте її за допомогою call і apply поставивши контекст і гостей як аргумент
+ * Напишіть клас Toggle, який приймає об'єкт налаштувань {isOpen: boolean} і оголошує одну властивість on - стан вкл/викл (true/false). За замовчанням значення властивості on має бути false.
  */
 
-const guests = ['Anna', 'Jack', 'Jimmy'];
-const newGuests = ['John', 'Vasyl'];
+const firstToggle = new Toggle({ isOpen: true });
+// console.group('firstToggle');
+// console.log(firstToggle.on);
+// firstToggle.toggle();
+// console.log(firstToggle.on);
+// console.groupEnd('firstToggle');
 
-const place1 = {
-  house: 'Palace',
-};
-
-const place2 = {
-  house: 'Barn',
-};
-
-function hostGuests(...names) {
-  console.log(`${names.join(', ')} are staying in ${this.house}`);
-}
-
-hostGuests.call(place1, ...guests, ...newGuests);
-hostGuests.call(place2, ...guests, 'Vasyl');
-
-hostGuests.apply(place1, [...guests, ...newGuests]);
-hostGuests.apply(place2, [...guests, 'Vasyl']);
-
-// Anna, Jack, Jimmy, John are staying in Palace
+const secondToggle = new Toggle();
+// console.group('secondToggle');
+// console.log(secondToggle.on);
+// secondToggle.toggle();
+// console.log(secondToggle.on);
+// console.groupEnd('secondToggle');

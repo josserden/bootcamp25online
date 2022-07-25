@@ -1,48 +1,19 @@
-//todo Телефонна книга
+//todo Сховище
 
 /*
- * Створіть об'єкт phonebook з методами add, getDate, getContacts.
- * add - створює новий контакт додаванням id та createdAt та якщо потрібно - додає дефолтне значення для властивості list, та додає контакт в масив contacts.
- * getDate - повертає дату створення об'єкта.
- * getContacts - повертає масив контактів.
+ * Напиши клас Storage, який створює об'єкти для управління складом товарів. При виклику отримуватиме один аргумент - початковий масив товарів, і записуватиме його у властивість items.
+
+* Додай методи класу:
+
+* getItems() - повертає масив товарів.
+* addItem(item) - отримує новий товар та додає його до поточних.
+* removeItem(item) - отримує товар і, якщо є, видаляє його з поточних.
  */
 
-const phonebook = {
-  contacts: [],
+const storage = new Storage(['🍎', '🍋', '🍇', '🍑']);
 
-  add(contact) {
-    const newContact = {
-      id: this.generateId(),
-      createdAt: this.getDate(),
-      list: 'default',
-      ...contact,
-    };
+storage.addItem('🍌');
+storage.removeItem('🍋');
+storage.removeItem('🔆');
 
-    this.contacts.push(newContact);
-  },
-
-  getDate() {
-    return new Date();
-  },
-
-  getContacts() {
-    return this.contacts;
-  },
-
-  generateId() {
-    return '_' + Math.random().toString(36).substr(2, 9);
-  },
-};
-
-phonebook.add({
-  name: 'Mango',
-  email: 'mango@mail.com',
-  list: 'friends',
-});
-
-phonebook.add({
-  name: 'Poly',
-  email: 'poly@hotmail.com',
-});
-
-console.dir(phonebook.getContacts());
+console.log(storage.getItems());

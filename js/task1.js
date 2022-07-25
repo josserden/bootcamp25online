@@ -15,23 +15,48 @@
 * Додай метод updatePostCount(value), який у параметрі value приймає кількість постів, які потрібно додати користувачеві.
 */
 
-// const mango = new Blogger({
-//   name: 'Mango',
-//   age: 24,
-//   numberOfPosts: 20,
-//   topics: ['tech', 'cooking'],
-// });
+class Blogger {
+  constructor({ name, age, numberOfPosts, topics }) {
+    this.name = name;
+    this.age = age;
+    this.numberOfPosts = numberOfPosts;
+    this.topics = topics;
+  }
 
-// const poly = new Blogger({
-//   name: 'Poly',
-//   age: 19,
-//   numberOfPosts: 17,
-//   topics: ['sports', 'gaming', 'health'],
-// });
+  getInfo() {
+    return `User ${this.name} is ${this.age} years old and has ${this.numberOfPosts} posts.`;
+  }
 
-// const john = new Blogger({
-//   name: 'John',
-//   age: 39,
-//   numberOfPosts: 100,
-//   topics: ['politics', 'military', 'ballet'],
-// });
+  updatePostCount(value) {
+    this.numberOfPosts += value;
+  }
+}
+
+const mango = new Blogger({
+  name: 'Mango',
+  age: 24,
+  numberOfPosts: 20,
+  topics: ['tech', 'cooking'],
+});
+
+console.log(mango.getInfo());
+mango.updatePostCount(10);
+console.log(mango.getInfo());
+
+const poly = new Blogger({
+  name: 'Poly',
+  age: 19,
+  numberOfPosts: 17,
+  topics: ['sports', 'gaming', 'health'],
+});
+
+console.log(poly.getInfo());
+
+const john = new Blogger({
+  name: 'John',
+  age: 39,
+  numberOfPosts: 100,
+  topics: ['politics', 'military', 'ballet'],
+});
+
+console.log(john.getInfo());

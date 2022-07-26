@@ -1,0 +1,124 @@
+html,
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  padding: 20px;
+  margin: 0;
+}
+
+form {
+  margin-bottom: 10px;
+}
+
+button {
+  display: block;
+
+  padding: 7px 10px;
+  border-radius: 5px;
+  background-color: #008cba;
+  border: none;
+  color: white;
+  cursor: pointer;
+  box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12),
+    0 2px 12px 0 rgba(0, 0, 0, 0.24), 0 8px 25px 0 rgba(0, 0, 0, 0.19);
+  transition: all 0.15s ease-in-out;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+button:hover:not(:disabled) {
+  background-color: #007caa;
+  box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12),
+    0 1px 6px 0 rgba(0, 0, 0, 0.24), 0 4px 12px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:active:not(:disabled) {
+  box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+}
+
+/* task 1 */
+
+.popup {
+  padding: 2px;
+  margin-bottom: 40px;
+  border-radius: 5px;
+  background-color: blanchedalmond;
+  text-align: center;
+  box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12),
+    0 20px 36px 0 rgba(0, 0, 0, 0.24), 0 20px 36px 0 rgba(0, 0, 0, 0.19);
+  transition: all 0.1s 0.1s cubic-bezier(0.5, 0, 0.5, 1);
+  opacity: 0;
+  z-index: 1;
+  transform: scale(0.8);
+}
+
+.popup_open {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.open-popup-btn {
+  padding: 12px 24px;
+  font-size: 1em;
+}
+
+/* task 2 */
+
+input:not([type='checkbox']) {
+  border-radius: 5px;
+  width: 400px;
+  height: 30px;
+
+  font-size: 18px;
+  padding: 10px;
+  outline: none;
+}
+
+input::placeholder {
+  font-size: 16px;
+}
+
+.active {
+  border: 2px solid rgb(192, 192, 0);
+}
+
+.valid {
+  border: 2px solid green;
+}
+
+.error {
+  border: 2px solid red;
+}
+
+/* task 3 */
+
+input[name='todo'] {
+  margin-right: 10px;
+}
+
+.todo-list li {
+  margin: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.complete {
+  text-decoration: line-through;
+}

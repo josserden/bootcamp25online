@@ -58,14 +58,14 @@
         >
           <div class="col-3 text-center">
             <h3 class="h3">Баланс</h3>
-            <p class="fs-3 fw-bold mb-0 text-secondary js-total-balance">
-              0 &#8372;
+            <p class="fs-3 fw-bold mb-0 text-secondary">
+              <span class="js-total-balance">0</span> &#8372;
             </p>
           </div>
           <div class="col-3 text-center">
             <h3 class="h3">Доходи</h3>
-            <p class="fs-3 text-success mb-0 fw-bold js-total-deposit">
-              + 0 &#8372;
+            <p class="fs-3 text-success mb-0 fw-bold">
+              + <span class="js-total-deposit">0</span> &#8372;
             </p>
           </div>
         </div>
@@ -89,8 +89,9 @@
                   class="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-lg"
-                  placeholder="Тип операції"
-                  name="operation"
+                  placeholder="Опис операції"
+                  name="description"
+                  minlength="5"
                   required
                 />
               </div>
@@ -122,7 +123,8 @@
               class="list-group list-group-flush mt-n3 overflow-auto js-history-list"
               style="max-height: 180px"
             >
-              <li
+              <li><p class="fst-italic">Поки що історії немає</p></li>
+              <!-- <li
                 class="list-group-item d-flex align-items-center justify-content-between border border-1 rounded px-4 py-2 text-dark bg-opacity-10 mb-3 bg-success"
               >
                 <span class="fs-5">Отримав аванс</span>
@@ -134,7 +136,7 @@
               >
                 <span class="fs-5">Купив квитки в кіно</span>
                 <span class="fs-5">1200 &#8372;</span>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>

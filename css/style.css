@@ -113,7 +113,7 @@ input[name='todo'] {
   margin-right: 10px;
 }
 
-.todo-list li {
+.js-list li {
   margin: 10px;
   font-size: 20px;
   cursor: pointer;

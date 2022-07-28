@@ -122,3 +122,7 @@ input[name='todo'] {
 .complete {
   text-decoration: line-through;
 }
+
+ol {
+  outline: 1px solid tomato;
+}

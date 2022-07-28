@@ -1,15 +1,7 @@
 /*
  * TODO list
- * (change, submit, preventDefault, form.elements, form.reset())
-
-* Є форма з одним інпутом, куди вводиться текст. І є чекбокс.
- * 1) Поки чекбокс не натиснутий, кнопка на формі неактивна.
- * 2) Натисканням Enter в інпуті або натисканням на кнопку Add, в список нижче, додається todo.
- * 3) Прибрати перезавантаження, звертатися через форму (elements) та ім'я інпуту
- * 4) Очистити інпут та чекбокс
- * 5) При натисканні на todo-замітку у списку, вона стає виконаною, тобто текст закреслюється (клас complete)
- * 6) При додаванні нотатки кнопка повинна знову стати недоступною
- * 7) Створення todo винести в окрему функцію
+ * Рефакторинг за допомогою делегування
+ * Додання можливості видалення тудушки
  */
 
 // Create an instance of Notyf
@@ -43,24 +35,29 @@ const onSubmit = event => {
 };
 
 const handleChange = event => {
-  // if (event.target.checked) {
-  //   refs.button.disabled = false;
-  // } else {
-  //   refs.button.disabled = true;
-  // }
-
-  // refs.button.disabled = event.target.checked ? false : true;
-
   refs.button.disabled = !event.target.checked;
+};
+
+const onItemClick = event => {
+  if (event.target.tagName === 'LI') {
+    event.target.classList.toggle('complete');
+  }
+
+  if (event.target.tagName === 'BUTTON') {
+    event.target.parentNode.remove();
+  }
 };
 
 const addTodo = text => {
   const todoElement = document.createElement('li');
   todoElement.textContent = text;
 
-  todoElement.addEventListener('click', () =>
-    todoElement.classList.toggle('complete'),
-  );
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.classList.add('btn-delete');
+  button.textContent = 'Delete';
+
+  todoElement.append(button);
 
   refs.list.append(todoElement);
 };
@@ -68,3 +65,4 @@ const addTodo = text => {
 // Listeners
 refs.form.addEventListener('submit', onSubmit);
 refs.checkbox.addEventListener('change', handleChange);
+refs.list.addEventListener('click', onItemClick);

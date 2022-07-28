@@ -1,105 +1,32 @@
-// Imports
-import { courses } from './courses.js';
+import { clients } from './clients.js';
 
-// Variables
-const ACTIVE_CLASS = 'is-active';
-const filtersContainer = document.querySelector('.filters-container');
-const coursesContainer = document.querySelector('.courses-container');
+/*
+ * Написати клас Клієнти по роботі з масивом клієнтів.
+ * Для ініціалізації клас повинен отримати параметри об'єкта з масивом клієнтів (клієнтів) і посилання на список із DOM (listRef).
+ *
+ * У класі повинні бути реалізовані методи:
+ * 1. normalizeData() - готує і повертає масив клієнтів для рендера:
+ * - з поля fullName або username створити загальне - ім'я, в якому має бути або прізвище клієнта (якщо є) або його ник
+ * - країни повинні бути у верхньому реєстрі
+ *
+ * 2. createMarkup(preparedData) - отримує підготовлений для рендеринга масив, створює і повертає розмітку за шаблоном з index.html:
+ * - якщо пошти немає, виведіть рядок "Немає електронної пошти"
+ * - лишка повинна бути прикрашена тільки якщо в полі shouldColor значення true
+ *
+ * 3. render() - за допомогою методу normalizeData() готує дані, за допомогою методу createMarkup(preparedData) створює розмітку і додає її в список на сторінці.
+ *
+ * 4. handleClick(e) - обробіток події 'Click' за списком (делегування):
+ * - якщо натиснути кнопку по кнопці видалити, клієнт видаляється з масиву і переробляє весь список
+ * - якщо клік був по кнопці color, окрашивает всю лишку в потрібний колір, а в масиві змінює значення поля shouldColor цього клієнта на true
+ *
+ * Після цього отримайте посилання на список і створіть екземпляр класу (myClients).
+ * Зарендерити масив на сторінку.
+ * У список повісити слухача події з обробником handleClick.
+ */
 
-// const items = courses
-//   .flatMap(item => item.tags)
-//   .filter((item, index, array) => array.indexOf(item) === index);
+// Example for initialization
 
-const items = [...new Set(courses.flatMap(item => item.tags))];
+// const listRef = document.querySelector('.clients');
 
-// Functions
-const renderFilters = () => {
-  const markup = items
-    .map(
-      item => /* html */ `
-      <button class="button" type="button" data-tag=${item}>${item}</button>
-    `,
-    )
-    .join('');
-
-  // const markup = items.reduce(
-  //   (acc, item) =>
-  //     acc + `<button class="button" type="button">${item}</button>`,
-  //   '',
-  // );
-
-  filtersContainer.insertAdjacentHTML('beforeend', markup);
-};
-
-const renderCourses = items => {
-  coursesContainer.innerHTML = '';
-
-  const markup = items.reduce((acc, { name, prices }) => {
-    acc += /* html */ `<li>${name} - <span class="accent">${prices} $</span></li>`;
-
-    return acc;
-  }, '');
-
-  coursesContainer.insertAdjacentHTML('beforeend', markup);
-};
-
-const onHandlerFilterClick = event => {
-  const filter = event.target; //  наш фільтр в який клікаємо
-  const activeFilter = document.querySelector(`.${ACTIVE_CLASS}`); // знаходимо активний фільтр
-  const filterValue = filter.dataset.tag; // значення дата-атрибуту
-
-  // if (filter !== event.currentTarget) {
-  //   filter.classList.add(ACTIVE_CLASS);
-  // }
-
-  if (filterValue) {
-    filter.classList.add(ACTIVE_CLASS);
-  }
-
-  if (activeFilter) {
-    activeFilter.classList.remove(ACTIVE_CLASS);
-  }
-
-  if (filter === activeFilter) {
-    console.log('кнопка', filter);
-    console.log('активна кнопка', activeFilter);
-
-    return renderCourses(courses);
-  }
-
-  console.log('кнопка', filter);
-  console.log('активна кнопка', activeFilter);
-
-  const filteredItems = courses.filter(course =>
-    course.tags.includes(filterValue),
-  );
-
-  renderCourses(filteredItems);
-};
-
-// Dark Mode
-const options = {
-  bottom: '64px', // default: '32px'
-  right: '64px', // default: '32px'
-  left: 'unset', // default: 'unset'
-  time: '0.5s', // default: '0.3s'
-  mixColor: '#fff', // default: '#fff'
-  backgroundColor: '#fff', // default: '#fff'
-  buttonColorDark: '#100f2c', // default: '#100f2c'
-  buttonColorLight: '#fff', // default: '#fff'
-  saveInCookies: true, // default: true,
-  label: '🔆', // default: ''
-  autoMatchOsTheme: true, // default: true
-};
-
-function addDarkmodeWidget() {
-  new Darkmode(options).showWidget();
-}
-
-// Run Functions
-renderFilters();
-renderCourses(courses);
-
-// Listeners
-filtersContainer.addEventListener('click', onHandlerFilterClick);
-window.addEventListener('load', addDarkmodeWidget);
+// const myClients = new Clients({ clients, listRef });
+// myClients.render();

@@ -50,6 +50,7 @@ body {
   padding: 0;
   border: 0;
   cursor: pointer;
+  text-transform: uppercase;
 
   color: var(--main-font-color);
   font-weight: bold;
